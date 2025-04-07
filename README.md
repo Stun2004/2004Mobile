@@ -35,8 +35,11 @@
   </style>
 </head>
 <body>
+  <p style="color: white;">Redirecting to 2004Scape...</p>
   <script>
+    // Redirect to the client
     window.location.replace("https://2004.lostcity.rs/client?world=2&detail=high&method=0");
+    // Lock landscape and prevent zoom
     if (screen.orientation && screen.orientation.lock) {
       screen.orientation.lock('landscape').catch(err => console.log('Orientation lock failed:', err));
     }
