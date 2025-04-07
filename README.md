@@ -37,40 +37,9 @@
   </style>
 </head>
 <body>
-  <p>Stretching 2004Scape client...</p>
+  <p>Redirecting to stretched 2004Scape client...</p>
   <script>
-    // Redirect to the client
     window.location.replace("https://2004.lostcity.rs/client?world=2&detail=high&method=0");
-    
-    // Inject CSS to stretch the game client after redirect
-    window.addEventListener('load', () => {
-      // This runs on the target page after redirect
-      const style = document.createElement('style');
-      style.textContent = `
-        html, body {
-          margin: 0 !important;
-          padding: 0 !important;
-          height: 100vh !important;
-          width: 100vw !important;
-          overflow: hidden !important;
-        }
-        /* Target the game container (adjust selector if needed) */
-        applet, object, embed, canvas, #game-frame, .game-container {
-          width: 100vw !important;
-          height: 100vh !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          position: fixed !important;
-          top: 0 !important;
-          left: 0 !important;
-          transform: none !important;
-          object-fit: fill !important; /* Stretch to fill */
-        }
-      `;
-      document.head.appendChild(style);
-    });
-
-    // Lock to landscape and prevent zoom/refresh
     if (screen.orientation && screen.orientation.lock) {
       screen.orientation.lock('landscape').catch(err => console.log('Orientation lock failed:', err));
     }
