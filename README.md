@@ -15,13 +15,7 @@
       justify-content: center;
       align-items: center;
     }
-    #game-frame {
-      width: 100vw;
-      height: 100vh;
-      border: none;
-      display: block;
-      transform-origin: center;
-    }
+    /* Force landscape */
     @media (orientation: portrait) {
       body {
         transform: rotate(90deg);
@@ -32,16 +26,6 @@
         top: 0;
         left: 0;
       }
-      #game-frame {
-        width: 100vh;
-        height: 100vw;
-      }
-    }
-    @media (orientation: landscape) {
-      #game-frame {
-        width: 100vw;
-        height: 100vh;
-      }
     }
     html, body {
       -webkit-text-size-adjust: none;
@@ -51,8 +35,8 @@
   </style>
 </head>
 <body>
-  <iframe id="game-frame" src="https://2004.lostcity.rs/client?world=2&detail=high&method=0"></iframe>
   <script>
+    window.location = "https://2004.lostcity.rs/client?world=2&detail=high&method=0";
     if (screen.orientation && screen.orientation.lock) {
       screen.orientation.lock('landscape').catch(() => {});
     }
